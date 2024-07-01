@@ -2950,7 +2950,7 @@ function Library:CreateWindow(...)
     if typeof(Config.Position) ~= 'UDim2' then Config.Position = UDim2.fromOffset(175, 50) end
     if typeof(Config.Size) ~= 'UDim2' then Config.Size = UDim2.fromOffset(550, 600) end
 
-    if Config.Center then
+    if Config. then
         Config.AnchorPoint = Vector2.new(0.5, 0.5)
         Config.Position = UDim2.fromScale(0.5, 0.5)
     end
@@ -2987,15 +2987,15 @@ function Library:CreateWindow(...)
         BorderColor3 = 'AccentColor';
     });
 
-local WindowLabel = Library:CreateLabel({
-    Position = UDim2.new(0.5, -WindowLabel.Size.X.Offset/2, 0, 0), -- Center horizontally
-    Size = UDim2.new(1, 0, 0, 25), -- Full width, 25 pixels height
-    Text = Config.Title or '',
-    TextXAlignment = Enum.TextXAlignment.Center,
-    ZIndex = 1,
-    Parent = Inner,
-    RichText = true
-})
+    local WindowLabel = Library:CreateLabel({
+        Position = UDim2.new(0, 7, 0, 0);
+        Size = UDim2.new(0, 0, 0, 25);
+        Text = Config.Title or '';
+        TextXAlignment = Enum.TextXAlignment.Left;
+        ZIndex = 1;
+        Parent = Inner;
+        RichText = true;    
+    });
 
     local MainSectionOuter = Library:Create('Frame', {
         BackgroundColor3 = Library.BackgroundColor;
