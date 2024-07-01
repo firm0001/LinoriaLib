@@ -2987,15 +2987,15 @@ function Library:CreateWindow(...)
         BorderColor3 = 'AccentColor';
     });
 
-    local WindowLabel = Library:CreateLabel({
-        Position = UDim2.new(0, 7, 0, 0);
-        Size = UDim2.new(0, 0, 0, 25);
-        Text = Config.Title or '';
-        TextXAlignment = Enum.TextXAlignment.Center;
-        ZIndex = 1;
-        Parent = Inner;
-        RichText = true;    
-    });
+local WindowLabel = Library:CreateLabel({
+    Position = UDim2.new(0.5, -WindowLabel.Size.X.Offset/2, 0, 0), -- Center horizontally
+    Size = UDim2.new(1, 0, 0, 25), -- Full width, 25 pixels height
+    Text = Config.Title or '',
+    TextXAlignment = Enum.TextXAlignment.Center,
+    ZIndex = 1,
+    Parent = Inner,
+    RichText = true
+})
 
     local MainSectionOuter = Library:Create('Frame', {
         BackgroundColor3 = Library.BackgroundColor;
